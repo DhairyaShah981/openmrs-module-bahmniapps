@@ -4,8 +4,11 @@
 </div>
 
 <div class="login">
-    <header class="reg-header">
-        <div>{{'LOGIN_LOCATION_PAGE_TITLE_TEXT' | translate}}</div>
+    <header class="reg-header login-card-header">
+        <div class="login-header-content">
+            <i class="fa fa-map-marker login-header-icon"></i>
+            <span class="left">{{'LOGIN_LOCATION_PAGE_TITLE_TEXT' | translate}}</span>
+        </div>
     </header>
     <form ng-submit="updateSessionLocation()" name="loginLocationForm" bm-form autofillable="true">
         <div class="login-body">
@@ -43,6 +46,6 @@
 
 
 <div class="power-by">
-    <img src="./../images/bahmniLogoFull.png" alt="Bahmni" />
-    <a href={{helpLink}}> Bahmni Help</a>
+    <span class="powered-brand"><i class="fa fa-heartbeat"></i> HealthX OS</span>
+    <a href={{helpLink}}> Help & Support</a>
 </div>
