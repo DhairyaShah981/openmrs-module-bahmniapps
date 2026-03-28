@@ -32,29 +32,31 @@ COPY ui/app/i18n/ /usr/local/apache2/htdocs/bahmni/i18n/
 # Copy compiled CSS from builder
 COPY --from=scss-builder /build/app/styles/*.css /usr/local/apache2/htdocs/bahmni/styles/
 
-# Overwrite ALL fingerprinted CSS files with our compiled versions
-# There are two sets: /styles/*.hash.css AND /module/*.min.hash.css
+# APPEND our compiled CSS to existing fingerprinted CSS files (preserve base styles, add overrides)
+# The upstream minified CSS contains ALL concatenated styles; we append our theme on top.
 RUN STYLES=/usr/local/apache2/htdocs/bahmni/styles && \
     ROOT=/usr/local/apache2/htdocs/bahmni && \
-    # 1) Overwrite /styles/name.hash.css with /styles/name.css
+    # 1) Append to /styles/name.hash.css
     for css in $STYLES/*.css; do \
       base=$(basename "$css" .css); \
       name=$(echo "$base" | sed 's/\.[a-f0-9]\{8\}$//'); \
       if [ "$name" != "$base" ] && [ -f "$STYLES/${name}.css" ]; then \
-        cp "$STYLES/${name}.css" "$css"; \
-        echo "Overwrote $css"; \
+        cat "$STYLES/${name}.css" >> "$css"; \
+        echo "Appended to $css"; \
       fi; \
     done && \
-    # 2) Overwrite per-module minified CSS (e.g. /home/home.min.hash.css)
+    # 2) Append to per-module minified CSS (e.g. /home/home.min.hash.css)
     for modcss in $ROOT/home/home.min.*.css \
                   $ROOT/registration/registration.min.*.css \
                   $ROOT/clinical/clinical.min.*.css \
-                  $ROOT/clinical/clinicalPrint.min.*.css; do \
+                  $ROOT/admin/admin.min.*.css \
+                  $ROOT/adt/adt.min.*.css \
+                  $ROOT/reports/reports.min.*.css; do \
       [ -f "$modcss" ] || continue; \
       modname=$(basename "$modcss" | sed 's/\.min\.[a-f0-9]\{8\}\.css$//'); \
       if [ -f "$STYLES/${modname}.css" ]; then \
-        cp "$STYLES/${modname}.css" "$modcss"; \
-        echo "Overwrote $modcss"; \
+        cat "$STYLES/${modname}.css" >> "$modcss"; \
+        echo "Appended to $modcss"; \
       fi; \
     done
 
