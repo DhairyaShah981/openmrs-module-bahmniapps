@@ -74,15 +74,15 @@
         }
 
         .btn-user-info {
-            background: inherit;
+            background: rgba(255, 255, 255, 0.1);
             padding: 0;
             border: none;
-            border-radius: 0;
+            border-radius: 6px;
             margin: 0;
             color: $white;
 
             @media screen and (min-width: 769px) {
-                background: lighten($bahmniPrimaryColor, 10%);
+                background: rgba(255, 255, 255, 0.12);
                 padding: 0 16px;
             }
 
@@ -98,12 +98,14 @@
                 display: none;
 
                 &.active {
-                    background: lighten($bahmniPrimaryColor, 10%);
+                    background: $white;
                     display: block;
                     position: absolute;
                     right: 0;
-                    top: 50px;
+                    top: 54px;
                     z-index: 1000;
+                    border-radius: 8px;
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 
                     @media screen and (max-width: $max-page-width) {
                         right: 10px;
@@ -115,13 +117,13 @@
                     clear: both;
                     text-align: left;
                     padding-left: 10px;
-                    border-bottom: 1px solid lighten($bahmniPrimaryColor, 10%);
+                    border-bottom: 1px solid $lightestGray;
                     margin: 0;
-                    padding: 10px 10px 10px 5px;
-                    color: $lightGray;
+                    padding: 12px 14px;
+                    color: $darkGray;
 
                     a {
-                        color: $white;
+                        color: $darkGray;
 
                         &.disabled {
                             color: $lightGray;

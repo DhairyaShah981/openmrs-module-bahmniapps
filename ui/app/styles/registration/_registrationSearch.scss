@@ -1,9 +1,9 @@
 .reg-search-wrapper{
-  padding:5px;
-  margin-top:5px;
-  border:1px solid $lightestGray;
+  padding: 16px;
+  margin-top: 8px;
+  border: 1px solid $lightestGray;
   background: $white;
-  border-radius: 3px;
+  border-radius: 10px;
   @include box-shadow-for-section();
   .reg-search{
     button{
@@ -79,23 +79,34 @@
   }
 }
 .registraition-search-results-container{
-  padding: 5px;
+  padding: 8px;
   overflow-x: auto;
+  border-radius: 8px;
   table{
-    margin-top: 20px;
-    font-size: 0.7rem;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    border-collapse: separate;
+    border-spacing: 0;
     tr{
       border: none;
+      transition: background 0.15s ease;
     }
     td,th{
-      padding:4px 8px 4px 8px;
+      padding: 10px 12px;
       text-align:left;
       @media screen and (max-width: 1024px){
-        padding:9px 8px 9px 8px;
+        padding: 10px 8px;
       }
     }
+    th {
+      font-family: $OpenSansBoldFont;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: $mediumGray;
+    }
     tr:hover{
-      background: $lightestGray;
+      background: rgba($bahmniSecondaryColor, 0.04);
     }
   }
   .slno_col{

@@ -189,45 +189,45 @@ Below listed fonts are used in the whole Bahmni application.
 $max-page-width: 1300px;
 
 /*  _colors - bahmniTheme:  */
-$bahmniPrimaryColor: #00463f;
-$bahmniSecondaryColor: #669999;
-$bahmniTertiaryColor: #457FAC;
+$bahmniPrimaryColor: #1a237e;
+$bahmniSecondaryColor: #3949ab;
+$bahmniTertiaryColor: #5c6bc0;
 
-$bahmniLinkColor: #2b95ff;
+$bahmniLinkColor: #1565c0;
 
-$bahmniPrimaryBtnColor: #a1d030;
-$bahmniPrimaryBtnColorHover: #88af28;
+$bahmniPrimaryBtnColor: #2e7d32;
+$bahmniPrimaryBtnColorHover: #1b5e20;
 
-$bahmniSectionHeaderColor: #66b298;
+$bahmniSectionHeaderColor: #3949ab;
 
 
 /*  _components - bahmniTheme: */
-$clinicalNotesColor: #EFF8FF;
-$clinicalCurrentVist: #E8A000;
-$clinicalInfoMessageBg: #e8edf3;
-$clinicalRemoveBtn: #660000;
-$clinicalHighlight: #cceffc;
+$clinicalNotesColor: #e8eaf6;
+$clinicalCurrentVist: #f57c00;
+$clinicalInfoMessageBg: #e8eaf6;
+$clinicalRemoveBtn: #b71c1c;
+$clinicalHighlight: #e3f2fd;
 
 
-$clinicalFormInvalid: #ffcdcd;
-$clinicalFormFocus: #007fff;
-$clinicalFormFocusBg: #fffdf7;
-$clinicalFormWarning: #FFFAD8;
+$clinicalFormInvalid: #ffcdd2;
+$clinicalFormFocus: #1565c0;
+$clinicalFormFocusBg: #fafafa;
+$clinicalFormWarning: #fff8e1;
 
 // New Observation Template Color
 
-$observationTitleHover:#b7e5e5;
+$observationTitleHover:#c5cae9;
 
 
 /*  _different shades of grey/gray:  */
-$darkGray:     #333;
-$mediumGray:   #666;       /* any text will not be lighter than this */
-$lightGray:    #ccc;     /* any border will not be lighter than this */
-$lighterGray:  #ddd; 
-$lightestGray: #eee; /* any background will not be lighter than this */
+$darkGray:     #263238;
+$mediumGray:   #546e7a;       /* any text will not be lighter than this */
+$lightGray:    #cfd8dc;     /* any border will not be lighter than this */
+$lighterGray:  #e0e0e0;
+$lightestGray: #f5f5f5; /* any background will not be lighter than this */
 
-$primarySectionGridBorder: #bbb;
-$bahmniTableHeaderBg: #f1f1f1;
+$primarySectionGridBorder: #b0bec5;
+$bahmniTableHeaderBg: #f5f5f5;
 
 $bahmniPageBg: #fafafa;
 
@@ -238,27 +238,27 @@ $fontPath: "../styles/fonts";
 $customFontPath: "../styles/fonts/bahmni-custom-fonts";
 
 //colors
-$alertBackground: #FFFDF0;
-$bodyBackground: #EEE;
+$alertBackground: #fff8e1;
+$bodyBackground: #f5f5f5;
 
 $white: #FFFFFF;
 $black: #000000;
-$darkerGrey: #BBB;
-$lighterGrey: #f3f3f3;
+$darkerGrey: #90a4ae;
+$lighterGrey: #f5f5f5;
 
 //openMrs colors
-$highlight: darken(#009384, 15%);
-$text: darken(#5B57A6, 20%);
-$subtleText: darken($darkerGrey, 25%);
-$subtlerText: $darkerGrey;
+$highlight: #1a237e;
+$text: #263238;
+$subtleText: #546e7a;
+$subtlerText: #90a4ae;
 
-$link: #007FFF;
-$focus: #FFFDF7;
+$link: #1565c0;
+$focus: #fafafa;
 
-$success: #A1D030;
-$alert: #FFA000;
-$error: #ff6666;
-$successBackground: #ddffdd;
+$success: #2e7d32;
+$alert: #f57c00;
+$error: #e53935;
+$successBackground: #e8f5e9;
 
 /*  _spacing padding - margin:  */
 $smallestSpacing: 5px;
@@ -299,7 +299,15 @@ $primaryItalicFont: "OpenSansItalic";
 }
 
 @mixin box-shadow-for-section{
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+@mixin box-shadow-hover{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+@mixin transition-smooth{
+  transition: all 0.2s ease;
 }
 
 @mixin check-box {

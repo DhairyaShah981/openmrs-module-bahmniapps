@@ -136,12 +136,10 @@ category: Layout - Button
 
 
 @mixin button($tcolor: #FFF, $bcolor: #DDD, $font: $text) {
-  border-radius: 3px;
-  background: linear-gradient(to bottom, $tcolor, $bcolor);
-  background-color: $bcolor;
-  border: $bcolor 1px solid;
-  //padding: 8px 20px;
-  padding: 6px 20px 7px;
+  border-radius: 6px;
+  background: $bcolor;
+  border: 1px solid darken($bcolor, 5%);
+  padding: 8px 20px;
   display: inline-block;
   line-height: 1.2em;
   color: $font;
@@ -149,19 +147,22 @@ category: Layout - Button
   min-width: 0;
   max-width: 300px;
   text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: $OpenSansFont;
 
   &:hover {
-    background: lighten($bcolor, 2%);
-    border-color: darken($bcolor, 5%);
+    background: darken($bcolor, 5%);
+    border-color: darken($bcolor, 10%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       @media screen and (max-width: 1024px) {
-        background: linear-gradient(to bottom, $tcolor, $bcolor);
-        border: $bcolor 1px solid;
+        background: $bcolor;
+        border: 1px solid darken($bcolor, 5%);
       }
   }
 
   &.active {
-    background: darken($bcolor, 2%);
-    border-color: darken($bcolor, 5%);
+    background: darken($bcolor, 8%);
+    border-color: darken($bcolor, 12%);
   }
 
   i {
@@ -295,12 +296,16 @@ category: Layout - Button
     max-width: 250px;
     min-width: 0;
     margin-right: 10px;
+    border-radius: 8px;
+    font-family: $OpenSansBoldFont;
+    letter-spacing: 0.3px;
   }
 
   &.cancel {
     @include button($error, darken($error, 8%), white);
     max-width: 250px;
     min-width: 0;
+    border-radius: 8px;
     margin-right: 10px;
   }
 

@@ -28,11 +28,12 @@ html{
 
 body {
   font-family: $OpenSansFont, Arial, sans-serif;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: $bahmniPageBg;
   color: $text;
-  font-size: 16px;
-  line-height: 1.1em;
+  font-size: 14px;
+  line-height: 1.5em;
   margin : 0 auto;
   pre{
     background: none;

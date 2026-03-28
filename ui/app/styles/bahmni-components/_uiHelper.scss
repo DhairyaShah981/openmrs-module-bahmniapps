@@ -28,13 +28,14 @@ use either a `<div>` or an `<section>` element:
 
 .section-grid,
 %section-grid {
-	border: 1px solid $bahmniSecondaryColor;
-	border-radius: 5px 5px 0 0;
+	border: 1px solid rgba($bahmniSecondaryColor, 0.15);
+	border-radius: 8px;
 	background: $white;
 }
 .section-title-wrapper{
   background: $bahmniSecondaryColor;
   padding-right: 10px;
+  border-radius: 8px 8px 0 0;
   button{
 	margin-top: 6px;
   }
@@ -42,16 +43,17 @@ use either a `<div>` or an `<section>` element:
 
 
 h2.section-title {
-	font-family: $OpenSansFont;
-	padding: $defaultSpacing;
+	font-family: $OpenSansBoldFont;
+	padding: 12px 14px;
 	margin-top: 0;
 	margin-bottom: 0;
 	color: $white;
-	font-size: 16px;
+	font-size: 14px;
+	letter-spacing: 0.3px;
 	clear: both;
 	background: $bahmniSecondaryColor;
 	position: relative;
-	border-radius: 2px 2px 0 0;
+	border-radius: 8px 8px 0 0;
 	.section-title-text{
 		padding-top: 8px;
 		display: inline-block;
@@ -62,14 +64,14 @@ h2.section-title {
     		background: darken($bahmniSecondaryColor,5%);
     	}
 	    .title-link {
-	        border-bottom: 1px solid white;
+	        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	    }
 	    .fa-external-link {
 	        position: absolute;
 	        right: 0;
 	        top: 0;
 	        font-size: 26px;
-	        opacity: 0.5;
+	        opacity: 0.4;
 	    }
 	}
 }

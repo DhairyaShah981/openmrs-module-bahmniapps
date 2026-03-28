@@ -157,6 +157,18 @@ form, .form {
             input[type="text"], input[type="password"],input[type="date"] {
                 float: left;
                 width: 12.5em;
+                border: 1px solid $lightGray;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-size: 14px;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+                &:focus {
+                  border-color: $bahmniSecondaryColor;
+                  box-shadow: 0 0 0 3px rgba($bahmniSecondaryColor, 0.1);
+                  outline: none;
+                }
+
                 @media (max-width : 800px) {
                   width: 11.5em;
                 }
@@ -165,7 +177,20 @@ form, .form {
                 }
             }
 
-            input[type="number"] { width: 8em; }
+            input[type="number"] {
+              width: 8em;
+              border: 1px solid $lightGray;
+              border-radius: 6px;
+              padding: 8px 12px;
+            }
+
+            select {
+              border: 1px solid $lightGray;
+              border-radius: 6px;
+              padding: 8px 12px;
+              font-size: 14px;
+              background: $white;
+            }
 
             .value-text-only {
                 display: inline-block;

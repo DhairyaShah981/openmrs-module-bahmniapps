@@ -47,10 +47,11 @@ aside{
     width:300px;
     background: $darkGray;
     bottom: 0;
-    top: 50px;
-    box-shadow: -3px 5px 10px $mediumGray;
+    top: 56px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
     z-index: 99999999;
     height:auto;
+    border-radius: 0;
     h2 {
       color: $mediumGray;
       font-size: 14px;

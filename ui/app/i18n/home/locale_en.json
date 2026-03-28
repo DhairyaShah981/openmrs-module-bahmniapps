@@ -56,5 +56,8 @@
     "NO_FULFILMENT_MESSAGE": "No observations captured for this order.",
     "NO_NAVIGATION_LINKS_AVAILABLE_MESSAGE": "No navigation links available.",
     "ACCEPT": "Accept",
-    "SELECT_VALUE_FROM_AUTOCOMPLETE_DEFAULT_MESSAGE": "Please select a value from auto complete"
+    "SELECT_VALUE_FROM_AUTOCOMPLETE_DEFAULT_MESSAGE": "Please select a value from auto complete",
+    "APP_TITLE": "Bahmni",
+    "DASHBOARD_TITLE": "Welcome to Bahmni",
+    "DASHBOARD_SUBTITLE": "Select a module to get started"
 }

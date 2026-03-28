@@ -1,15 +1,21 @@
 .user-actions {
-  background: lighten($bahmniPrimaryColor, 10%);
-  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
   border: none;
-  border-radius: 0;
-  margin: 0;
-  height: 50px;
+  border-radius: 6px;
+  margin: 0 4px;
+  height: auto;
   float: right;
+  cursor: pointer;
+  transition: background 0.2s ease;
 
   @media screen and (max-width: 959px) {
     margin: 0;
-    padding: 15px;
+    padding: 12px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
 
   &:focus {
@@ -17,22 +23,26 @@
   }
 
   i.mini {
-    font-size: .9em;
+    font-size: .8em;
   }
 
   &+ul {
     display: none;
 
     &.active {
-      background: lighten($bahmniPrimaryColor, 10%);
+      background: $white;
       display: block;
       position: absolute;
-      right: 0;
-      top: 50px;
+      right: 10px;
+      top: 54px;
       z-index: 10000;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      min-width: 200px;
 
       @media screen and (max-width: 959px) {
-        top: 49px;
+        top: 54px;
         right: 0;
       }
     }
@@ -41,21 +51,39 @@
       float: left;
       clear: both;
       text-align: left;
-      border-bottom: 1px solid lighten($bahmniPrimaryColor, 10%);
+      border-bottom: 1px solid $lightestGray;
       margin: 0;
+      width: 100%;
+
+      &:last-child {
+        border-bottom: none;
+      }
 
       a {
-        padding: 10px 5px;
-        display: inline-block;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
         min-width: 160px;
-        color: #fff;
+        color: $darkGray;
+        font-size: 14px;
+        transition: background 0.15s ease;
+
+        &:hover {
+          background: $lightestGray;
+        }
       }
 
       a.disabled {
-        color: $lightGray;
+        color: $mediumGray;
+        cursor: default;
+
+        &:hover {
+          background: transparent;
+        }
 
         .fa-user {
-          color: $lightGray;
+          color: $mediumGray;
         }
       }
     }
