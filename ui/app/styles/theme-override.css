@@ -1,0 +1,9 @@
+/* HealthX OS Theme Override - Indigo header for all modules */
+.header-wrapper { background: #3949ab !important; }
+.header-wrapper header { background: #3949ab !important; }
+.reg-header { background: #3949ab !important; }
+.opd-header-wrapper { background: #3949ab !important; }
+.opd-header-wrapper header { background: #3949ab !important; }
+.top-nav { background: #3949ab !important; }
+.section-title-wrapper { background: #3949ab !important; }
+a.mobile-menu-icon { background: #3949ab !important; }

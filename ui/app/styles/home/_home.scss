@@ -166,6 +166,11 @@ body {
 .reg-header {
   @include clearfix;
   height: 52px;
+  background: $bahmniSecondaryColor !important;
+}
+
+.header-wrapper {
+  background: $bahmniSecondaryColor !important;
 }
 
 .remove-margin {

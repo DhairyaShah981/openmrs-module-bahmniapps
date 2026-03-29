@@ -19,6 +19,7 @@
 **/ui/cacheChromeDist
 **/ui/app/styles/**/*.css
 **/ui/app/styles/*.css
+!**/ui/app/styles/theme-override.css
 **/**/.DS_Store
 **/test_out
 **/omod/src/main/webapp/*

@@ -60,5 +60,26 @@ RUN STYLES=/usr/local/apache2/htdocs/bahmni/styles && \
       fi; \
     done
 
+# Append theme override CSS to ALL CSS files (shared styles + per-module)
+COPY ui/app/styles/theme-override.css /tmp/theme-override.css
+RUN ROOT=/usr/local/apache2/htdocs/bahmni && \
+    for cssfile in $ROOT/styles/*.css \
+                   $ROOT/home/home.min.*.css \
+                   $ROOT/registration/registration.min.*.css \
+                   $ROOT/clinical/clinical.min.*.css \
+                   $ROOT/admin/admin.min.*.css \
+                   $ROOT/adt/adt.min.*.css \
+                   $ROOT/reports/reports.min.*.css \
+                   $ROOT/document-upload/document-upload.min.*.css \
+                   $ROOT/orders/orders.min.*.css; do \
+      [ -f "$cssfile" ] || continue; \
+      cat /tmp/theme-override.css >> "$cssfile"; \
+      echo "Theme override appended to $cssfile"; \
+    done
+
+# Fix HTML title tags to show HealthX OS instead of Bahmni
+RUN sed -i 's|<title>Bahmni Home</title>|<title>HealthX OS</title>|g' /usr/local/apache2/htdocs/bahmni/home/index.html && \
+    sed -i 's|<title>Bahmni Admin</title>|<title>HealthX OS Admin</title>|g' /usr/local/apache2/htdocs/bahmni/admin/index.html || true
+
 LABEL maintainer="dhairya0981"
-LABEL description="Custom Bahmni Web with modernized UI - indigo theme"
+LABEL description="Custom HealthX OS Web with modernized UI - indigo theme"
